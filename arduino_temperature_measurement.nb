@@ -1,0 +1,1089 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     49751,       1081]
+NotebookOptionsPosition[     48251,       1047]
+NotebookOutlinePosition[     48585,       1062]
+CellTagsIndexPosition[     48542,       1059]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Get", "[", 
+  RowBox[{"\"\<ArduinoHelpers.wl\>\"", ",", " ", 
+   RowBox[{
+   "Path", "\[Rule]", 
+    "\"\</home/teemu/Documents/Projects/Mathematica/\>\""}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.744374592737109*^9, 3.744374600978828*^9}, {
+  3.744375436611864*^9, 3.744375437517984*^9}, {3.744375847603868*^9, 
+  3.744375848528577*^9}, {3.744376199446064*^9, 3.74437620405551*^9}, {
+  3.744376264583321*^9, 3.7443763159357862`*^9}},
+ CellLabel->
+  "In[351]:=",ExpressionUUID->"19c251a7-3db2-4ff6-ad6e-9e12f05ada40"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"?", "ArduinoHelpers`*"}]], "Input",
+ CellChangeTimes->{{3.74437461075737*^9, 3.744374627570449*^9}, {
+   3.744375170864325*^9, 3.7443751752366457`*^9}, 3.7443752224509773`*^9, {
+   3.744375440972498*^9, 3.744375441917945*^9}},
+ CellLabel->
+  "In[147]:=",ExpressionUUID->"52510758-8400-4ddb-8c5e-e291455a6cfd"],
+
+Cell[BoxData[
+ DynamicModuleBox[{Typeset`open$$ = True}, 
+  PaneSelectorBox[{False->
+   RowBox[{
+    OpenerBox[Dynamic[Typeset`open$$],
+     ImageSize->Small], 
+    StyleBox["ArduinoHelpers`", "InfoHeading"]}], True->GridBox[{
+     {
+      RowBox[{
+       OpenerBox[Dynamic[Typeset`open$$],
+        ImageSize->Small], 
+       StyleBox["ArduinoHelpers`", "InfoHeading"]}]},
+     {GridBox[{
+        {
+         ButtonBox["CloseArduinoSerial",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info1473744393428-2372737", {
+            "CloseArduinoSerial", "ArduinoHelpers`"}},
+          ButtonNote->"ArduinoHelpers`"], 
+         ButtonBox["OpenArduinoSerial",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info1473744393428-2372737", {
+            "OpenArduinoSerial", "ArduinoHelpers`"}},
+          ButtonNote->"ArduinoHelpers`"], 
+         ButtonBox["SynchronizeTime",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info1473744393428-2372737", {
+            "SynchronizeTime", "ArduinoHelpers`"}},
+          ButtonNote->"ArduinoHelpers`"]},
+        {
+         ButtonBox["DefaultSerialPort",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info1473744393428-2372737", {
+            "DefaultSerialPort", "ArduinoHelpers`"}},
+          ButtonNote->"ArduinoHelpers`"], 
+         ButtonBox["ReadTemperatureTrend",
+          BaseStyle->"InformationLink",
+          
+          ButtonData:>{
+           "Info1473744393428-2372737", {
+            "ReadTemperatureTrend", "ArduinoHelpers`"}},
+          ButtonNote->"ArduinoHelpers`"], ""}
+       },
+       DefaultBaseStyle->"InfoGrid",
+       GridBoxItemSize->{"Columns" -> {{
+            Scaled[0.31666666666666665`]}}}]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}}]}, 
+   Dynamic[Typeset`open$$],
+   ImageSize->Automatic]]], "Print", "InfoCell",
+ CellChangeTimes->{
+  3.74438262826018*^9},ExpressionUUID->"f64908a0-b499-422a-86f1-495d9c74ec99"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"arduino", "=", 
+  RowBox[{"OpenArduinoSerial", "[", "DefaultSerialPort", "]"}]}]], "Input",
+ CellChangeTimes->{{3.744375505357724*^9, 3.744375559719757*^9}},
+ CellLabel->
+  "In[344]:=",ExpressionUUID->"1995ae02-e736-4518-991c-002ec0cb6999"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["DeviceObject",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquarePlusIconMedium"], 
+               ImageSizeCache -> {12., {0., 12.}}], Appearance -> None, 
+              ButtonFunction :> (Typeset`open$$ = True), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            GraphicsBox[{
+              Thickness[0.038461538461538464`], {
+               FaceForm[{
+                 RGBColor[0.941, 0.961, 0.957], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {
+                25.5, 1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 
+                0.5}, {0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {
+                1.395, 25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {
+                25.5, 24.605}, {25.5, 23.5}, {25.5, 2.5}}}]}, {
+               RGBColor[0.7, 0.7, 0.7], 
+               Opacity[1.], 
+               JoinForm[{"Miter", 10.}], 
+               
+               JoinedCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {
+                25.5, 1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 
+                0.5}, {0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {
+                1.395, 25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {
+                25.5, 24.605}, {25.5, 23.5}, {25.5, 2.5}}}, 
+                CurveClosed -> {1}]}, {
+               FaceForm[{
+                 RGBColor[0.5423, 0.63104, 0.63597], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{11.133, 
+                18.727999999999998`}, {11.133, 18.451999999999998`}, {
+                11.357000000000001`, 18.227999999999998`}, {11.633, 
+                18.227999999999998`}, {14.792, 18.227999999999998`}, {15.068, 
+                18.227999999999998`}, {15.292, 18.451999999999998`}, {15.292, 
+                18.727999999999998`}, {15.292, 20.639000000000003`}, {15.292, 
+                20.915}, {15.068, 21.139000000000003`}, {14.792, 
+                21.139000000000003`}, {11.633, 21.139000000000003`}, {
+                11.357000000000001`, 21.139000000000003`}, {11.133, 20.915}, {
+                11.133, 20.639000000000003`}, {11.133, 
+                18.727999999999998`}}}]}, {
+               FaceForm[{
+                 RGBColor[0.5, 0.5, 0.5], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                12.357000000000001`, 1.}, {14.113000000000001`, 1.}, {
+                14.113000000000001`, 9.554}, {12.357000000000001`, 
+                9.554}}}]}, {
+               FaceForm[{
+                 RGBColor[0.624375, 0.695304, 0.691308], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                0}, {0, 1, 0}}}, {{{15.876000000000001`, 19.799}, {8.122, 
+                19.799}, {8.122, 11.516}, {10.573, 11.516}, {10.573, 
+                11.493}, {11.982000000000001`, 9.171}, {14.539, 9.171}, {
+                15.876000000000001`, 11.493}, {15.876000000000001`, 11.516}, {
+                18.326, 11.516}, {18.326, 19.799}, {15.876000000000001`, 
+                19.799}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                8.806000000000001, 7.993}, {9.995000000000001, 7.993}, {
+                9.995000000000001, 11.008}, {8.806000000000001, 11.008}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{16.5, 
+                7.993}, {17.689, 7.993}, {17.689, 11.008}, {16.5, 
+                11.008}}}]}}, AspectRatio -> Automatic, 
+             ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, 
+             PlotRange -> {{0., 26.}, {0., 26.}}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Class: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Serial\"", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"ID: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Status: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  DynamicModuleBox[{Devices`DeviceAPI`DeviceDump`lights$$ = {
+                    Style[
+                    Graphics[{{
+                    RGBColor[0.88, 1, 0.88], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0, 0.85, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                    9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                    BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                    False], 
+                    Style[
+                    Graphics[{{
+                    RGBColor[1, 1, 0], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0.8, 0.8, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                    9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                    BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                    False]}, Devices`DeviceAPI`DeviceDump`opacities$$ = {
+                    Opacity[1], 
+                    Opacity[0.2]}, 
+                    Devices`DeviceAPI`DeviceDump`status$$ = {
+                    "Connected (/dev/ttyACM0)", 
+                    "Not connected (/dev/ttyACM0)"}, 
+                    Devices`DeviceAPI`DeviceDump`d$$ = 
+                    DeviceObject[{"Serial", 1}], 
+                    Devices`DeviceAPI`DeviceDump`ind$$ = 1, 
+                    Devices`DeviceAPI`DeviceDump`indr$$ = 1}, 
+                   DynamicBox[
+                    ToBoxes[Devices`DeviceAPI`DeviceDump`ind$$ = If[
+                    DeviceOpenQ[Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; 
+                    Devices`DeviceAPI`DeviceDump`indr$$ = If[
+                    DeviceFramework`DeviceRegisteredQ[
+                    Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; Style[
+                    Row[{
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`lights$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$], 
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`status$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$]}], 
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`opacities$$, 
+                    Devices`DeviceAPI`DeviceDump`indr$$]], StandardForm], 
+                    ImageSizeCache -> {149., {4., 10.}}], 
+                   DynamicModuleValues :> {}], "SummaryItem"]}], 
+               "\[SpanFromLeft]"}}, AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], True -> 
+        GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquareMinusIconMedium"]], Appearance -> None, 
+              ButtonFunction :> (Typeset`open$$ = False), Evaluator -> 
+              Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            GraphicsBox[{
+              Thickness[0.038461538461538464`], {
+               FaceForm[{
+                 RGBColor[0.941, 0.961, 0.957], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {
+                25.5, 1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 
+                0.5}, {0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {
+                1.395, 25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {
+                25.5, 24.605}, {25.5, 23.5}, {25.5, 2.5}}}]}, {
+               RGBColor[0.7, 0.7, 0.7], 
+               Opacity[1.], 
+               JoinForm[{"Miter", 10.}], 
+               
+               JoinedCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{25.5, 2.5}, {
+                25.5, 1.395}, {24.605, 0.5}, {23.5, 0.5}, {2.5, 0.5}, {1.395, 
+                0.5}, {0.5, 1.395}, {0.5, 2.5}, {0.5, 23.5}, {0.5, 24.605}, {
+                1.395, 25.5}, {2.5, 25.5}, {23.5, 25.5}, {24.605, 25.5}, {
+                25.5, 24.605}, {25.5, 23.5}, {25.5, 2.5}}}, 
+                CurveClosed -> {1}]}, {
+               FaceForm[{
+                 RGBColor[0.5423, 0.63104, 0.63597], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{1, 4, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}, {
+                1, 3, 3}, {0, 1, 0}, {1, 3, 3}, {0, 1, 0}}}, {{{11.133, 
+                18.727999999999998`}, {11.133, 18.451999999999998`}, {
+                11.357000000000001`, 18.227999999999998`}, {11.633, 
+                18.227999999999998`}, {14.792, 18.227999999999998`}, {15.068, 
+                18.227999999999998`}, {15.292, 18.451999999999998`}, {15.292, 
+                18.727999999999998`}, {15.292, 20.639000000000003`}, {15.292, 
+                20.915}, {15.068, 21.139000000000003`}, {14.792, 
+                21.139000000000003`}, {11.633, 21.139000000000003`}, {
+                11.357000000000001`, 21.139000000000003`}, {11.133, 20.915}, {
+                11.133, 20.639000000000003`}, {11.133, 
+                18.727999999999998`}}}]}, {
+               FaceForm[{
+                 RGBColor[0.5, 0.5, 0.5], 
+                 Opacity[1.]}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                12.357000000000001`, 1.}, {14.113000000000001`, 1.}, {
+                14.113000000000001`, 9.554}, {12.357000000000001`, 
+                9.554}}}]}, {
+               FaceForm[{
+                 RGBColor[0.624375, 0.695304, 0.691308], 
+                 Opacity[1.]}], 
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {
+                0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 0}, {0, 1, 
+                0}, {0, 1, 0}}}, {{{15.876000000000001`, 19.799}, {8.122, 
+                19.799}, {8.122, 11.516}, {10.573, 11.516}, {10.573, 
+                11.493}, {11.982000000000001`, 9.171}, {14.539, 9.171}, {
+                15.876000000000001`, 11.493}, {15.876000000000001`, 11.516}, {
+                18.326, 11.516}, {18.326, 19.799}, {15.876000000000001`, 
+                19.799}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{
+                8.806000000000001, 7.993}, {9.995000000000001, 7.993}, {
+                9.995000000000001, 11.008}, {8.806000000000001, 11.008}}}], 
+               
+               FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{16.5, 
+                7.993}, {17.689, 7.993}, {17.689, 11.008}, {16.5, 
+                11.008}}}]}}, AspectRatio -> Automatic, 
+             ImageSize -> {Automatic, 
+               Dynamic[3.5 CurrentValue["FontCapHeight"]]}, 
+             PlotRange -> {{0., 26.}, {0., 26.}}], 
+            GridBox[{{
+               RowBox[{
+                 TagBox["\"Class: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"Serial\"", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"ID: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Status: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  DynamicModuleBox[{Devices`DeviceAPI`DeviceDump`lights$$ = {
+                    Style[
+                    Graphics[{{
+                    RGBColor[0.88, 1, 0.88], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0, 0.85, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                    9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                    BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                    False], 
+                    Style[
+                    Graphics[{{
+                    RGBColor[1, 1, 0], 
+                    Disk[{0, 0}]}, {
+                    RGBColor[0.8, 0.8, 0], 
+                    Circle[{0, 0}]}}, PlotRange -> {-2.2, 1.1}, ImageSize -> 
+                    9, ImageMargins -> {{3, 3}, {2, 0}}, 
+                    BaseStyle -> {CacheGraphics -> False}], Selectable -> 
+                    False]}, Devices`DeviceAPI`DeviceDump`opacities$$ = {
+                    Opacity[1], 
+                    Opacity[0.2]}, 
+                    Devices`DeviceAPI`DeviceDump`status$$ = {
+                    "Connected (/dev/ttyACM0)", 
+                    "Not connected (/dev/ttyACM0)"}, 
+                    Devices`DeviceAPI`DeviceDump`d$$ = 
+                    DeviceObject[{"Serial", 1}], 
+                    Devices`DeviceAPI`DeviceDump`ind$$, 
+                    Devices`DeviceAPI`DeviceDump`indr$$}, 
+                   DynamicBox[
+                    ToBoxes[Devices`DeviceAPI`DeviceDump`ind$$ = If[
+                    DeviceOpenQ[Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; 
+                    Devices`DeviceAPI`DeviceDump`indr$$ = If[
+                    DeviceFramework`DeviceRegisteredQ[
+                    Devices`DeviceAPI`DeviceDump`d$$], 1, 2]; Style[
+                    Row[{
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`lights$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$], 
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`status$$, 
+                    Devices`DeviceAPI`DeviceDump`ind$$]}], 
+                    Part[
+                    Devices`DeviceAPI`DeviceDump`opacities$$, 
+                    Devices`DeviceAPI`DeviceDump`indr$$]], StandardForm]], 
+                   DynamicModuleValues :> {}], "SummaryItem"]}], 
+               "\[SpanFromLeft]"}, {
+               TagBox[
+                
+                DynamicModuleBox[{
+                 Devices`DeviceAPI`DeviceDump`opacities$$ = {
+                    Opacity[1], 
+                    Opacity[0.2]}, Devices`DeviceAPI`DeviceDump`d$$ = 
+                  DeviceObject[{"Serial", 1}], 
+                  Devices`DeviceAPI`DeviceDump`props$$, 
+                  Devices`DeviceAPI`DeviceDump`vals$$, 
+                  Devices`DeviceAPI`DeviceDump`reg$$}, 
+                 DynamicBox[
+                  ToBoxes[
+                  Devices`DeviceAPI`DeviceDump`reg$$ = 
+                    DeviceFramework`DeviceRegisteredQ[
+                    Devices`DeviceAPI`DeviceDump`d$$]; 
+                   Devices`DeviceAPI`DeviceDump`props$$ = 
+                    DeviceFramework`DeviceExternalProperties[
+                    Devices`DeviceAPI`DeviceDump`d$$]; 
+                   Devices`DeviceAPI`DeviceDump`vals$$ = 
+                    Devices`DeviceAPI`DeviceDump`d$$[
+                    Devices`DeviceAPI`DeviceDump`props$$]; Column[
+                    Join[{
+                    BoxForm`SummaryItem[{"Properties: ", 
+                    If[
+                    Or[
+                    Not[Devices`DeviceAPI`DeviceDump`reg$$], 
+                    Devices`DeviceAPI`DeviceDump`props$$ === {}], 
+                    Style[None, 
+                    Part[Devices`DeviceAPI`DeviceDump`opacities$$, 
+                    If[Devices`DeviceAPI`DeviceDump`reg$$, 1, 2]]], ""]}]}, 
+                    MapThread[BoxForm`SummaryItem[{
+                    StringJoin["      ", 
+                    ToString[#], ": "], #2}]& , {
+                    Devices`DeviceAPI`DeviceDump`props$$, 
+                    Devices`DeviceAPI`DeviceDump`vals$$}]]], StandardForm]], 
+                 DynamicModuleValues :> {}], "SummaryItem"], 
+               "\[SpanFromLeft]"}}, AutoDelete -> False, 
+             BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, 
+             GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {
+              "Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}}, AutoDelete -> 
+          False, BaselinePosition -> {1, 1}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  DeviceObject[{"Serial", 1}],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.7443887019993467`*^9, 3.744454405945877*^9, 
+  3.7444571212607403`*^9},
+ CellLabel->
+  "Out[344]=",ExpressionUUID->"1a9f1082-925e-43c5-a90e-9db09acdb9c7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SynchronizeTime", "[", "arduino", "]"}]], "Input",
+ CellChangeTimes->{{3.744382650788221*^9, 3.744382660228459*^9}, {
+  3.744384633550671*^9, 3.7443846358285837`*^9}, {3.7443854169200687`*^9, 
+  3.744385418743741*^9}},
+ CellLabel->
+  "In[317]:=",ExpressionUUID->"4e20a08c-56c5-48f7-a434-511e97015b85"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.74438428372491*^9, {3.744384350371068*^9, 3.74438437422689*^9}, 
+   3.7443844702012043`*^9, {3.7443845062780657`*^9, 3.744384522754586*^9}, 
+   3.744384556226172*^9, {3.7443845945133123`*^9, 3.744384637643158*^9}, 
+   3.744384969333345*^9, 3.744385008671999*^9, 3.744385042375701*^9, 
+   3.7443850778873167`*^9, 3.744385130116994*^9, {3.7443851733166018`*^9, 
+   3.744385198431286*^9}, 3.744385261655407*^9, 3.744385305329694*^9, {
+   3.74438536425865*^9, 3.7443854202339373`*^9}, 3.744386313774271*^9, {
+   3.744386691830752*^9, 3.7443867156958103`*^9}, {3.744386752997555*^9, 
+   3.74438677839323*^9}, 3.744386989449174*^9, {3.744387551675303*^9, 
+   3.744387579373011*^9}, 3.7443877526029787`*^9, {3.7443878470443707`*^9, 
+   3.744387863126568*^9}, 3.744388135595682*^9},
+ CellLabel->
+  "Out[317]=",ExpressionUUID->"91254341-ec7a-47e4-8fe3-e56133fa8bd5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"temperatureTrend", "=", 
+  RowBox[{"ReadTemperatureTrend", "[", "arduino", "]"}]}]], "Input",
+ CellChangeTimes->{{3.744375566092902*^9, 3.744375584319479*^9}, {
+  3.7443758633528967`*^9, 3.744375866528534*^9}, {3.744458397942293*^9, 
+  3.7444583992220984`*^9}},ExpressionUUID->"ffd8549b-d928-4e8f-8e9c-\
+1daa697170b5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   TagBox["TimeSeries",
+    "SummaryHead"], "[", 
+   DynamicModuleBox[{Typeset`open$$ = False, Typeset`embedState$$ = "Ready"}, 
+    
+    TemplateBox[{PaneSelectorBox[{False -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquarePlusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = True), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            GraphicsBox[{{{{}, {}, 
+                TagBox[{
+                  Directive[
+                   Opacity[1.], 
+                   RGBColor[0.368417, 0.506779, 0.709798], 
+                   AbsoluteThickness[1.6]], 
+                  LineBox[CompressedData["
+1:eJxN0FtI03EUB3BvYJmCWYldTGYOStGU33+mOfGURhompYVIuNZUfIimQbLo
+QVm1dLgi0Uy85KXIB8sLGaVlTgy8hJd0YGKm2S5u00znbdZmv9/beTgcPg/n
+fA+HJ8lJznJycHAQ0mJ9e4d6cEZnPtUyzZNGnxNARtqXpFnqvsSSEilfALPO
+K9PMZZB+sNDGQVBQdcZPars1tiruGwc79jfqmRfrWsO73nBgEw/dmqNe2nMn
+wlfFgZovszKrEkWh/tkcVMUJlb+o9crBK4KzdD5Q4q2ldnRu9lESDmJVuyqZ
+TT+eXTjO4+Bp/OhRHXWIrSsqwYODDrlPM3NMvqn+7RaBG/KeUD313vXJJwXz
+BCKnFJ+YV8Y3hF0aAuNtQ6cN1MnvDyvMXwko5kLHsAcmV0XzyN/PC+ewXQ/V
+5hqRHbIVa9i73QsVJuR2mdHLjMwXj5RjtzSM8hfwfsnlJuxlw8mQRWRLX9RH
+7N4ANfymdjGoUu29BJqmro4yB0/0J0taaV6aOH2Jmp/nZOHVEJCmaGeZfQd0
+/OBiAiON93L+UMs7pf7tMgL22y9XmSfv17c9yCLQ7RkoW6aeeJ4b7ZZKoMJp
+wGUFOeamuQh7O/KYjwX5YYGpBvt1sTtvFVm3nNCCbda4cWvsvhed1UckBHZ6
+GXqZH9dtavvyCHTsC7i4Ti1YiijyVBI4Ua7VMOszRyo8qggM56ozNqj9xOqZ
+R80ESL+fkTnzrmvZZzWBQP3M9U30v0jRByu2d8qBfCuye0OZxxZy6bucSmxj
+wrDvX+TU8PhX2KW1Z8L+IRskoh7soYWJJBuy3KIZw066tHjNjvPClAZsx41u
+6Tbyf9PyCYw=
+                   "]]}, 
+                 Annotation[#, 
+                  "Charting`Private`Tag$131068#1"]& ]}}, {}, {}}, {
+             DisplayFunction -> Identity, Ticks -> {Automatic, Automatic}, 
+              AxesOrigin -> {3744398934, 19.34}, 
+              FrameTicks -> {{{}, {}}, {{}, {}}}, GridLines -> {None, None}, 
+              DisplayFunction -> Identity, PlotRangePadding -> {{
+                 Scaled[0.1], 
+                 Scaled[0.1]}, {
+                 Scaled[0.1], 
+                 Scaled[0.1]}}, PlotRangeClipping -> True, ImagePadding -> 
+              All, DisplayFunction -> Identity, AspectRatio -> 1, 
+              Axes -> {False, False}, AxesLabel -> {None, None}, 
+              AxesOrigin -> {3.744398934*^9, 19.34}, DisplayFunction :> 
+              Identity, Frame -> {{True, True}, {True, True}}, 
+              FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> 
+              Directive[
+                Opacity[0.5], 
+                Thickness[Tiny], 
+                RGBColor[0.368417, 0.506779, 0.709798]], 
+              FrameTicks -> {{None, None}, {None, None}}, 
+              GridLines -> {None, None}, GridLinesStyle -> Directive[
+                GrayLevel[0.5, 0.4]], ImageSize -> 
+              Dynamic[{
+                Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                 AbsoluteCurrentValue[Magnification]}], 
+              Method -> {
+               "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+                AbsolutePointSize[6], "ScalingFunctions" -> None, 
+                "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+                    (Identity[#]& )[
+                    Part[#, 1]], 
+                    (Identity[#]& )[
+                    Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+                    (Identity[#]& )[
+                    Part[#, 1]], 
+                    (Identity[#]& )[
+                    Part[#, 2]]}& )}}, 
+              PlotRange -> {{3744398934, 3744463734}, {19.34, 
+                21.28999985052877}}, PlotRangeClipping -> True, 
+              PlotRangePadding -> {{
+                 Scaled[0.1], 
+                 Scaled[0.1]}, {
+                 Scaled[0.1], 
+                 Scaled[0.1]}}, Ticks -> {Automatic, Automatic}}], 
+            GridBox[{{
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"27 Aug 2018 22:48:54\"", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"28 Aug 2018 16:48:54\"", "SummaryItem"]}]}, 
+                 "RowDefault"], "SummaryItem"], "\[SpanFromLeft]"}, {
+               RowBox[{
+                 TagBox["\"Data points: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["10", "SummaryItem"]}], "\[SpanFromLeft]"}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}], True -> GridBox[{{
+            PaneBox[
+             ButtonBox[
+              DynamicBox[
+               FEPrivate`FrontEndResource[
+               "FEBitmaps", "SquareMinusIconMedium"]], 
+              ButtonFunction :> (Typeset`open$$ = False), Appearance -> None, 
+              Evaluator -> Automatic, Method -> "Preemptive"], 
+             Alignment -> {Center, Center}, ImageSize -> 
+             Dynamic[{
+               Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                AbsoluteCurrentValue[Magnification]}]], 
+            GraphicsBox[{{{{}, {}, 
+                TagBox[{
+                  Directive[
+                   Opacity[1.], 
+                   RGBColor[0.368417, 0.506779, 0.709798], 
+                   AbsoluteThickness[1.6]], 
+                  LineBox[CompressedData["
+1:eJxN0FtI03EUB3BvYJmCWYldTGYOStGU33+mOfGURhompYVIuNZUfIimQbLo
+QVm1dLgi0Uy85KXIB8sLGaVlTgy8hJd0YGKm2S5u00znbdZmv9/beTgcPg/n
+fA+HJ8lJznJycHAQ0mJ9e4d6cEZnPtUyzZNGnxNARtqXpFnqvsSSEilfALPO
+K9PMZZB+sNDGQVBQdcZPars1tiruGwc79jfqmRfrWsO73nBgEw/dmqNe2nMn
+wlfFgZovszKrEkWh/tkcVMUJlb+o9crBK4KzdD5Q4q2ldnRu9lESDmJVuyqZ
+TT+eXTjO4+Bp/OhRHXWIrSsqwYODDrlPM3NMvqn+7RaBG/KeUD313vXJJwXz
+BCKnFJ+YV8Y3hF0aAuNtQ6cN1MnvDyvMXwko5kLHsAcmV0XzyN/PC+ewXQ/V
+5hqRHbIVa9i73QsVJuR2mdHLjMwXj5RjtzSM8hfwfsnlJuxlw8mQRWRLX9RH
+7N4ANfymdjGoUu29BJqmro4yB0/0J0taaV6aOH2Jmp/nZOHVEJCmaGeZfQd0
+/OBiAiON93L+UMs7pf7tMgL22y9XmSfv17c9yCLQ7RkoW6aeeJ4b7ZZKoMJp
+wGUFOeamuQh7O/KYjwX5YYGpBvt1sTtvFVm3nNCCbda4cWvsvhed1UckBHZ6
+GXqZH9dtavvyCHTsC7i4Ti1YiijyVBI4Ua7VMOszRyo8qggM56ozNqj9xOqZ
+R80ESL+fkTnzrmvZZzWBQP3M9U30v0jRByu2d8qBfCuye0OZxxZy6bucSmxj
+wrDvX+TU8PhX2KW1Z8L+IRskoh7soYWJJBuy3KIZw066tHjNjvPClAZsx41u
+6Tbyf9PyCYw=
+                   "]]}, 
+                 Annotation[#, 
+                  "Charting`Private`Tag$131068#1"]& ]}}, {}, {}}, {
+             DisplayFunction -> Identity, Ticks -> {Automatic, Automatic}, 
+              AxesOrigin -> {3744398934, 19.34}, 
+              FrameTicks -> {{{}, {}}, {{}, {}}}, GridLines -> {None, None}, 
+              DisplayFunction -> Identity, PlotRangePadding -> {{
+                 Scaled[0.1], 
+                 Scaled[0.1]}, {
+                 Scaled[0.1], 
+                 Scaled[0.1]}}, PlotRangeClipping -> True, ImagePadding -> 
+              All, DisplayFunction -> Identity, AspectRatio -> 1, 
+              Axes -> {False, False}, AxesLabel -> {None, None}, 
+              AxesOrigin -> {3.744398934*^9, 19.34}, DisplayFunction :> 
+              Identity, Frame -> {{True, True}, {True, True}}, 
+              FrameLabel -> {{None, None}, {None, None}}, FrameStyle -> 
+              Directive[
+                Opacity[0.5], 
+                Thickness[Tiny], 
+                RGBColor[0.368417, 0.506779, 0.709798]], 
+              FrameTicks -> {{None, None}, {None, None}}, 
+              GridLines -> {None, None}, GridLinesStyle -> Directive[
+                GrayLevel[0.5, 0.4]], ImageSize -> 
+              Dynamic[{
+                Automatic, 3.5 CurrentValue["FontCapHeight"]/
+                 AbsoluteCurrentValue[Magnification]}], 
+              Method -> {
+               "DefaultBoundaryStyle" -> Automatic, "DefaultMeshStyle" -> 
+                AbsolutePointSize[6], "ScalingFunctions" -> None, 
+                "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+                    (Identity[#]& )[
+                    Part[#, 1]], 
+                    (Identity[#]& )[
+                    Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+                    (Identity[#]& )[
+                    Part[#, 1]], 
+                    (Identity[#]& )[
+                    Part[#, 2]]}& )}}, 
+              PlotRange -> {{3744398934, 3744463734}, {19.34, 
+                21.28999985052877}}, PlotRangeClipping -> True, 
+              PlotRangePadding -> {{
+                 Scaled[0.1], 
+                 Scaled[0.1]}, {
+                 Scaled[0.1], 
+                 Scaled[0.1]}}, Ticks -> {Automatic, Automatic}}], 
+            GridBox[{{
+               TagBox[
+                TemplateBox[{
+                  RowBox[{
+                    TagBox["\"Time: \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"27 Aug 2018 22:48:54\"", "SummaryItem"]}], 
+                  RowBox[{
+                    TagBox["\" to \"", "SummaryItemAnnotation"], 
+                    "\[InvisibleSpace]", 
+                    TagBox["\"28 Aug 2018 16:48:54\"", "SummaryItem"]}]}, 
+                 "RowDefault"], "SummaryItem"], "\[SpanFromLeft]"}, {
+               RowBox[{
+                 TagBox["\"Data points: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["10", "SummaryItem"]}], "\[SpanFromLeft]"}, {
+               RowBox[{
+                 TagBox["\"Regular: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["True", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Output dimension: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["1", "SummaryItem"]}]}, {
+               RowBox[{
+                 TagBox["\"Metadata: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["None", "SummaryItem"]}], 
+               RowBox[{
+                 TagBox["\"Minimum increment: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox[
+                  RowBox[{"{", 
+                    RowBox[{"2", ",", "\"Hour\""}], "}"}], "SummaryItem"]}]}, {
+               TagBox["\"\"", "SummaryItem"], 
+               RowBox[{
+                 TagBox["\"Resampling: \"", "SummaryItemAnnotation"], 
+                 "\[InvisibleSpace]", 
+                 TagBox["\"LinearInterpolation\"", "SummaryItem"]}]}}, 
+             GridBoxAlignment -> {
+              "Columns" -> {{Left}}, "Rows" -> {{Automatic}}}, AutoDelete -> 
+             False, GridBoxItemSize -> {
+              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+             GridBoxSpacings -> {"Columns" -> {{2}}, "Rows" -> {{Automatic}}},
+              BaseStyle -> {
+              ShowStringCharacters -> False, NumberMarks -> False, 
+               PrintPrecision -> 3, ShowSyntaxStyles -> False}]}}, 
+          GridBoxAlignment -> {"Rows" -> {{Top}}}, AutoDelete -> False, 
+          GridBoxItemSize -> {
+           "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+          BaselinePosition -> {1, 1}]}, 
+       Dynamic[Typeset`open$$], ImageSize -> Automatic]},
+     "SummaryPanel"],
+    DynamicModuleValues:>{}], "]"}],
+  TemporalData[
+  TimeSeries, {{{21.29, 20.31, 19.82, 19.82, 19.82, 19.34, 19.34, 19.82, 
+    19.82, 19.82}}, {
+     TemporalData`DateSpecification[{2018, 8, 27, 22, 48, 54.}, {
+      2018, 8, 28, 16, 48, 54.}, {2, "Hour"}]}, 1, {"Continuous", 1}, {
+    "Discrete", 1}, 1, {
+    ValueDimensions -> 1, DateFunction -> Automatic, 
+     ResamplingMethod -> {"Interpolation", InterpolationOrder -> 1}}}, True, 
+   11.3],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->False]], "Output",
+ CellChangeTimes->{3.74438838196384*^9, 3.74438870566321*^9, 
+  3.744454409721854*^9, 3.744457126503646*^9, 3.7444575574050303`*^9, 
+  3.744458382579337*^9},
+ CellLabel->
+  "Out[352]=",ExpressionUUID->"a9c1c52b-1b58-43d0-bc65-4f2ea97cad11"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DateListPlot", "[", 
+  RowBox[{"temperatureTrend", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Automatic", ",", 
+        RowBox[{"{", 
+         RowBox[{"10.0", ",", 
+          RowBox[{"+", "30.0"}]}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"PlotLabel", "\[Rule]", "\"\<Temperature serie\>\""}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      TemplateBox[{
+       InterpretationBox["\[InvisibleSpace]", 1],"\"\[Degree]C\"",
+        "Celsius degrees difference","\"DegreesCelsiusDifference\""},
+       "Quantity"]}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->
+  "In[353]:=",ExpressionUUID->"2961d42f-56ac-40c9-ac13-a070f1a46f77"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     LineBox[{{3.744398934*^9, 21.29}, {3.744406134*^9, 20.31}, {
+      3.744413334*^9, 19.82}, {3.744420534*^9, 19.82}, {3.744427734*^9, 
+      19.82}, {3.744434934*^9, 19.34}, {3.744442134*^9, 19.34}, {
+      3.744449334*^9, 19.82}, {3.744456534*^9, 19.82}, {3.744463734*^9, 
+      19.82}}]}}, {}, {}, {}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, 
+    FormBox[
+     TemplateBox[{
+      "1", "\"\[Degree]C\"", "Celsius degrees difference", 
+       "\"DegreesCelsiusDifference\""}, "QuantityTF", SyntaxForm -> Mod], 
+     TraditionalForm]},
+  AxesOrigin->{3.744398934*^9, 10.1},
+  DisplayFunction->Identity,
+  Frame->{{True, True}, {True, True}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->
+   FrontEndValueCache[{{Automatic, Automatic}, {Charting`FindScaledTicks[
+       (Charting`getDateTicks[Automatic, {Automatic}, 
+        (Map[DateList, {
+          SlotSequence[1]}]& )[
+         SlotSequence[1]], None, 5, {{0.0125, 0}, {0.0075, 0}}, Automatic]& )[
+       
+        SlotSequence[1]], {Identity, Identity}]& , Charting`ScaledFrameTicks[
+       (Charting`getDateTicks[Charting`getDateTicks[Automatic, {Automatic}, 
+         (Map[DateList, {
+           SlotSequence[1]}]& )[
+          SlotSequence[1]], None, 5, {{0.0125, 0}, {0.0075, 0}}, 
+         Automatic]& , {Automatic}, 
+        (Map[DateList, {
+          SlotSequence[1]}]& )[
+         SlotSequence[1]], None, 5, {{0.0125, 0}, {0.0075, 0}}, None]& )[
+        SlotSequence[1]], {Identity, Identity}]& }}, {{
+     Automatic, Automatic}, {{{3.7443888*^9, 
+        FormBox["\"20:00\"", TraditionalForm], {0.008333333333333333, 0.}}, {
+       3.7444032*^9, 
+        FormBox["\"00:00\"", TraditionalForm], {0.008333333333333333, 0.}}, {
+       3.7444176*^9, 
+        FormBox["\"04:00\"", TraditionalForm], {0.008333333333333333, 0.}}, {
+       3.744432*^9, 
+        FormBox["\"08:00\"", TraditionalForm], {0.008333333333333333, 0.}}, {
+       3.7444464*^9, 
+        FormBox["\"12:00\"", TraditionalForm], {0.008333333333333333, 0.}}, {
+       3.7444608*^9, 
+        FormBox["\"16:00\"", TraditionalForm], {0.008333333333333333, 0.}}, {
+       3.7444752*^9, 
+        FormBox["\"20:00\"", TraditionalForm], {0.008333333333333333, 0.}}, {
+       3.7443888*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7443924*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.744396*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7443996*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444032*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444068*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444104*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.744414*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444176*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444212*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444248*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444284*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.744432*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444356*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444392*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444428*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444464*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.74445*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444536*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444572*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444608*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444644*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}}, {{3.7443888*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444032*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444176*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.744432*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444464*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444608*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444752*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7443888*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7443924*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.744396*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7443996*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444032*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444068*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444104*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.744414*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444176*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444212*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444248*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444284*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.744432*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444356*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444392*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444428*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444464*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.74445*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444536*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444572*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444608*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}, {3.7444644*^9, 
+        FormBox[
+         TemplateBox[{0., 0.}, "Spacer2"], TraditionalForm], {
+        0.008333333333333333, 0.}}}}}],
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotLabel->FormBox["\"Temperature serie\"", TraditionalForm],
+  PlotRange->{{3.744398934*^9, 3.744463734*^9}, {10., 30.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {0, 0}},
+  Ticks->{{}, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.744375880094603*^9, 3.744376337214772*^9, 3.7443828559238873`*^9, 
+   3.744387023603036*^9, 3.744387757812604*^9, 3.744388140382213*^9, {
+   3.744454410905323*^9, 3.744454422879561*^9}, 3.744457127956723*^9, 
+   3.7444583865584707`*^9},
+ CellLabel->
+  "Out[353]=",ExpressionUUID->"99a4aa53-657a-4e12-ab24-5034e9731926"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"CloseArduinoSerial", "[", "arduino", "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.744375883360485*^9, 3.74437589085443*^9}},
+ CellLabel->
+  "In[343]:=",ExpressionUUID->"7f2d7019-1eae-4c2c-bcf1-e629a3953109"]
+},
+WindowSize->{808, 911},
+WindowMargins->{{64, Automatic}, {59, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 545, 12, 31, "Input",ExpressionUUID->"19c251a7-3db2-4ff6-ad6e-9e12f05ada40"],
+Cell[CellGroupData[{
+Cell[1128, 36, 333, 6, 31, "Input",ExpressionUUID->"52510758-8400-4ddb-8c5e-e291455a6cfd"],
+Cell[1464, 44, 2076, 59, 80, "Print",ExpressionUUID->"f64908a0-b499-422a-86f1-495d9c74ec99"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3577, 108, 264, 5, 31, "Input",ExpressionUUID->"1995ae02-e736-4518-991c-002ec0cb6999"],
+Cell[3844, 115, 18641, 363, 67, "Output",ExpressionUUID->"1a9f1082-925e-43c5-a90e-9db09acdb9c7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22522, 483, 325, 6, 31, "Input",ExpressionUUID->"4e20a08c-56c5-48f7-a434-511e97015b85"],
+Cell[22850, 491, 913, 14, 35, "Output",ExpressionUUID->"91254341-ec7a-47e4-8fe3-e56133fa8bd5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23800, 510, 342, 6, 31, "Input",ExpressionUUID->"ffd8549b-d928-4e8f-8e9c-1daa697170b5"],
+Cell[24145, 518, 12928, 262, 67, "Output",ExpressionUUID->"a9c1c52b-1b58-43d0-bc65-4f2ea97cad11"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37110, 785, 716, 18, 84, "Input",ExpressionUUID->"2961d42f-56ac-40c9-ac13-a070f1a46f77"],
+Cell[37829, 805, 10160, 232, 266, "Output",ExpressionUUID->"99a4aa53-657a-4e12-ab24-5034e9731926"]
+}, Open  ]],
+Cell[48004, 1040, 243, 5, 31, "Input",ExpressionUUID->"7f2d7019-1eae-4c2c-bcf1-e629a3953109"]
+}
+]
+*)
+
