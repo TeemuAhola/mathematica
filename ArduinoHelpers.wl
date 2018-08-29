@@ -48,9 +48,9 @@ ReadTemperatureTrend[dev_]:=Module[{regExpForNumbers,tempString,tempValues, time
 regExpForNumbers=RegularExpression["[+-]?([0-9]+([.][0-9]*)?|[.][0-9]+)"];
 tempString=ReadTemperatureHistoryString[dev];
 {tempValues,timestamps}=StringCases[StringSplit[tempString, StartOfLine], regExpForNumbers]//ToExpression;
-temperatureTrend={FromUnixTime/@timestamps, tempValues}\[Transpose];
-filteredTemperatureTrend=DeleteCases[temperatureTrend,{FromUnixTime[0],0.}];
-Return[filteredTemperatureTrend//TimeSeries];
+temperatureTrend={FromUnixTime/@timestamps, QuantityArray[tempValues,"Celcius"]}//Transpose;
+filteredTemperatureTrend=DeleteCases[temperatureTrend,{FromUnixTime[0],Quantity[0.,"Celcius"]}];(*Drop empty measurements.*)
+Return[filteredTemperatureTrend//EventSeries];
 ];
 
 
